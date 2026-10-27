@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import type { Article } from "@/data/blog";
+export function ArticleCard({ article, featured = false }: { article: Article; featured?: boolean }) { return <article className={`article-card ${featured ? "featured" : ""}`}><div className="article-visual" aria-hidden="true"><span>{article.category}</span><div className="visual-lines"><i /><i /><i /></div></div><div className="article-card-body"><div className="meta"><span>{article.category}</span><time dateTime={article.date}>{article.displayDate}</time><span>{article.readTime}</span></div><h3><Link href={`/blog/${article.slug}`}>{article.title}</Link></h3><p>{article.description}</p><Link className="text-link" href={`/blog/${article.slug}`}>Read article <ArrowUpRight size={16} /></Link></div></article>; }

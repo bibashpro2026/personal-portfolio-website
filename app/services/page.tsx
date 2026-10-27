@@ -1,0 +1,14 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { CheckList, ConsultationCta, Eyebrow } from "@/components/shared";
+import { bookingHref, primaryCta, services } from "@/data/site";
+
+export const metadata: Metadata = { title: "Services", description: "Practical AI-powered marketing services that solve common growth, lead generation, visibility, content, and follow-up problems." };
+
+export default function ServicesPage() { return <main id="main-content">
+  <section className="page-hero centered-hero section-pad"><div className="container narrow"><Eyebrow>AI-powered marketing services</Eyebrow><h1>Solve the marketing problems that <em>block your growth.</em></h1><p className="hero-lead">Whether you need more leads, better content, stronger visibility, or faster follow-up, we start with the problem and build a practical plan around your business.</p><Link className="button" href={bookingHref}>{primaryCta}<ArrowRight size={17} /></Link></div></section>
+  <section className="services-detail"><div className="container">{services.map((service, index) => { const Icon = service.icon; return <article className="service-detail" id={service.slug} key={service.slug}><div className="service-side"><span>{service.number}</span><Icon size={30} /><h2>{service.title}</h2><p>{service.short}</p><Link className="text-link" href={bookingHref}>Discuss this service <ArrowRight size={16} /></Link></div><div className="service-content"><div><p className="mini-label">The business problem</p><p>{service.problem}</p></div><div><p className="mini-label">What it can include</p><CheckList items={service.includes} /></div><div><p className="mini-label">Practical benefits</p><CheckList items={service.benefits} /></div></div></article>; })}</div></section>
+  <section className="section-pad soft-section"><div className="container"><div className="section-heading centered"><Eyebrow>How we begin</Eyebrow><h2>From a clear problem to a practical plan.</h2></div><div className="engagement-flow"><article><span>01</span><h3>Listen</h3><p>Understand your goals, customers, challenges, and current marketing.</p></article><article><span>02</span><h3>Find the gaps</h3><p>Identify what is wasting time, losing leads, or limiting growth.</p></article><article><span>03</span><h3>Build the plan</h3><p>Choose clear priorities, useful tools, and practical next steps.</p></article><article><span>04</span><h3>Take action</h3><p>Use the plan yourself or discuss optional implementation support.</p></article></div><p className="pricing-note">Scope and pricing depend on your business needs and can be discussed during the consultation. No fixed packages are claimed on this site.</p></div></section>
+  <div className="container section-bottom"><ConsultationCta title="Get your free customized digital marketing plan." /></div>
+</main>; }
