@@ -2,4 +2,12 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { bookingHref, primaryCta, siteConfig } from "@/data/site";
 
-export function SiteFooter() { return <footer className="site-footer"><div className="container footer-main"><div><Link href="/" className="footer-logo-link" aria-label="Digital Bibash home"><img className="footer-logo" src="/digital-bibash-logo-final.png" alt="Digital Bibash" /></Link><p>Simple, practical AI-powered marketing for small and medium businesses.</p></div><div><p className="footer-label">Explore</p><Link href="/about">About</Link><Link href="/services">Services</Link><Link href="/blog">Insights</Link><Link href="/contact">Contact</Link></div><div><p className="footer-label">Start a conversation</p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><span>{siteConfig.location}</span><Link className="footer-cta" href={bookingHref}>{primaryCta} <ArrowUpRight size={15} /></Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span><span>Personal details marked as placeholders must be updated before publishing.</span></div></footer>; }
+const footerServices = [
+  { label: "Meta Ads", href: "/services#paid-advertising" },
+  { label: "Content Marketing", href: "/services#content-marketing" },
+  { label: "AI Automation", href: "/services#email-automation" },
+  { label: "Website & Landing Pages", href: "/services" },
+  { label: "Digital Marketing", href: "/services#ai-marketing-strategy" },
+];
+
+export function SiteFooter() { return <footer className="site-footer"><div className="container footer-main"><div><Link href="/" className="footer-logo-link" aria-label="Digital Bibash home"><img className="footer-logo" src="/digital-bibash-logo-final.png" alt="Digital Bibash" /></Link><p>Simple, practical AI-powered marketing for small and medium businesses.</p></div><div><p className="footer-label">Explore</p><Link href="/about">About</Link><Link href="/services">Services</Link><Link href="/blog">Insights</Link><Link href="/contact">Contact</Link></div><div><p className="footer-label">Services</p>{footerServices.map((service) => <Link href={service.href} key={service.label}>{service.label}</Link>)}</div><div><p className="footer-label">Start a conversation</p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><span>{siteConfig.location}</span><Link className="footer-cta" href={bookingHref}>{primaryCta} <ArrowUpRight size={15} /></Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span><span>Personal details marked as placeholders must be updated before publishing.</span></div></footer>; }
