@@ -1,6 +1,6 @@
 # AI Marketing Portfolio
 
-A responsive, five-page personal portfolio for an AI Marketing Expert. Built with Next.js-compatible Vinext, TypeScript, React, and CSS. The site is intentionally local-only until the owner details and email integration are configured.
+A responsive, five-page personal portfolio for an AI Marketing Expert. Built with Next.js, TypeScript, React, and CSS.
 
 ## Local setup
 
