@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by the development server (normally `http://127.0.0.1:5173`).
+Open the local URL printed by the development server (normally `http://localhost:3000`).
 
 Production check:
 
@@ -34,7 +34,7 @@ Articles live in `data/blog.ts`. Add an object with a unique slug, metadata, int
 
 ## Enable email delivery
 
-The server endpoint at `app/api/contact/route.ts` validates submissions and forwards them to the FormSubmit AJAX endpoint. The destination is the email address configured in `data/site.ts`; no API key or email-delivery environment variables are required.
+The contact form submits directly to FormSubmit's AJAX endpoint. The destination is the email address configured in `data/site.ts`; no API key or email-delivery environment variables are required.
 
 Submit the form once, then open the activation email from FormSubmit and confirm the address. FormSubmit queues submissions until the form is confirmed and delivers them afterward. Check the spam folder if the activation email does not appear in the inbox.
 
@@ -47,4 +47,4 @@ Submit the form once, then open the activation email from FormSubmit and confirm
 5. Change `siteUrl` so metadata, structured data, sitemap, and robots output use the production domain.
 6. Run `npm run build`.
 
-The site has not been published.
+Production site: `https://poudelbibash.com.np`.

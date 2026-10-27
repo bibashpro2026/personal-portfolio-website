@@ -6,7 +6,7 @@ export const siteConfig = {
   email: "bibashpro2026@gmail.com",
   location: "Your Location",
   bookingUrl: "",
-  siteUrl: "https://yourdomain.com",
+  siteUrl: "https://poudelbibash.com.np",
   socialLinks: [] as { label: string; href: string }[],
 };
 
